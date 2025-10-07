@@ -1,25 +1,76 @@
+/* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f4f4f4;
-  max-width: 100vw; /* Prevents horizontal overflow on wide screens */
-  overflow-x: hidden; /* Hides any horizontal scroll */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
+
 a {
   text-decoration: none;
   color: #007bff;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* Header/Hero Section */
+/* ========== Navigation ========== */
+nav {
+  background: #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  transition: max-height 0.4s ease;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  transition: color 0.3s;
+  min-width: 80px;
+  text-align: center;
+}
+
+nav a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* 🔹 زر القائمة للموبايل */
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 15px 20px;
+  position: absolute;
+  left: 10px;
+}
+
+/* ========== Header / Hero Section ========== */
 header {
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
@@ -53,13 +104,11 @@ header {
 .hero-text h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  text-align: left;
 }
 
 .hero-text p {
   font-size: 1.2em;
   margin-bottom: 20px;
-  text-align: left;
 }
 
 .btn {
@@ -71,49 +120,19 @@ header {
   font-weight: bold;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #e9ecef;
   text-decoration: none;
 }
 
-/* Navigation */
-nav {
-  background: #333;
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows wrapping on very narrow screens */
-}
-nav li {
-  margin: 0 20px;
-}
-nav a {
-  color: white;
-  padding: 15px 20px; /* Increased padding for touch targets */
-  display: block;
-  transition: color 0.3s;
-  min-width: 80px; /* Ensures tap-friendly width */
-  text-align: center;
-}
-nav a:hover {
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* Main Content */
+/* ========== Main & Sections ========== */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Section Styles */
 section {
   margin: 60px 0;
   padding: 40px;
@@ -121,6 +140,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
   text-align: center;
   font-size: 2.5em;
@@ -128,34 +148,21 @@ h2 {
   color: #007bff;
 }
 
-/* About Section */
+/* ========== About Section ========== */
 #about p {
   font-size: 1.1em;
   text-align: center;
   max-width: 800px;
   margin: 0 auto 20px;
 }
-.skills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-.skill-tag {
-  background: #007bff;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9em;
-}
 
-/* Projects Section */
+/* ========== Projects Section ========== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
+
 .project-card {
   background: #f8f9fa;
   padding: 20px;
@@ -163,24 +170,26 @@ h2 {
   text-align: center;
   transition: transform 0.3s;
 }
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 .project-card img {
   width: 100%;
-  height: auto; /* Changed to auto for responsiveness */
-  aspect-ratio: 16 / 9; /* Maintains proportion without distortion */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
 .project-card h3 {
   color: #007bff;
   margin-bottom: 10px;
 }
 
-/* Contact Section */
+/* ========== Contact Section ========== */
 .contact-info {
   display: flex;
   justify-content: space-around;
@@ -188,17 +197,19 @@ h2 {
   gap: 20px;
   text-align: center;
 }
+
 .contact-item {
   flex: 1;
   min-width: 200px;
-  padding: 10px; /* Added for better spacing */
+  padding: 10px;
 }
+
 .contact-item h3 {
   color: #007bff;
   margin-bottom: 10px;
 }
 
-/* Footer */
+/* ========== Footer ========== */
 footer {
   background: #333;
   color: white;
@@ -207,7 +218,9 @@ footer {
   margin-top: 40px;
 }
 
-/* Tablet Styles (768px - 1024px) */
+/* ========== Responsive Design ========== */
+
+/* 🔸 Tablets */
 @media (max-width: 1024px) and (min-width: 769px) {
   .hero-content {
     gap: 30px;
@@ -223,12 +236,8 @@ footer {
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-
-  nav li {
-    margin: 0 15px;
   }
 
   section {
@@ -237,10 +246,38 @@ footer {
   }
 }
 
-/* Mobile Styles (up to 768px) */
+/* 🔸 Mobile (up to 768px) */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  nav ul.active {
+    max-height: 400px; /* القائمة تظهر لما تضيف class active */
+  }
+
+  nav li {
+    margin: 0;
+    border-bottom: 1px solid #444;
+  }
+
+  nav a {
+    padding: 15px;
+  }
+
   header {
-    padding: 60px 15px; /* Reduced padding */
+    padding: 60px 15px;
   }
 
   .hero-content {
@@ -262,55 +299,9 @@ footer {
     font-size: 2em;
   }
 
-  .hero-text p {
-    font-size: 1.1em;
-  }
-
-  nav ul {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  nav li {
-    margin: 0;
-    width: 100%;
-  }
-
-  nav a {
-    padding: 15px;
-    border-bottom: 1px solid #444; /* Visual separator */
-  }
-
-  main {
-    padding: 10px;
-  }
-
-  section {
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 8px; /* Slightly smaller radius */
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  #about p {
-    font-size: 1em;
-    padding: 0 10px;
-  }
-
   .projects-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .project-card {
-    padding: 15px;
-  }
-
-  .project-card img {
-    aspect-ratio: 4 / 3; /* Taller aspect for mobile portraits */
   }
 
   .contact-info {
@@ -318,19 +309,13 @@ footer {
     gap: 15px;
   }
 
-  .contact-item {
-    min-width: auto;
-    padding: 15px;
-  }
-
   footer {
     padding: 15px;
-    margin-top: 30px;
     font-size: 0.9em;
   }
 }
 
-/* Very Small Screens (e.g., <480px) */
+/* 🔸 Very Small Screens (<480px) */
 @media (max-width: 480px) {
   .profile-img {
     width: 120px;
@@ -344,14 +329,5 @@ footer {
   .btn {
     padding: 8px 16px;
     font-size: 0.95em;
-  }
-
-  .skills {
-    gap: 8px;
-  }
-
-  .skill-tag {
-    padding: 6px 12px;
-    font-size: 0.8em;
   }
 }
